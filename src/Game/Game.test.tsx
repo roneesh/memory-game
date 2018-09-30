@@ -1,5 +1,6 @@
 import { shallow } from 'enzyme';
 import * as React from 'react';
+import { GameHeader } from './components';
 import Game from './Game';
 
 describe('The Game Wrapper', () => {
@@ -9,5 +10,10 @@ describe('The Game Wrapper', () => {
       finished: false,
       score: 0,
     });
+  });
+
+  it('renders a GameHeader', () => {
+    const game = shallow(<Game />);
+    expect(game.find(GameHeader).length).toEqual(1);
   });
 });

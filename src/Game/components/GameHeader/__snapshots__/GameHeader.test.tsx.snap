@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The GameHeader it renders a title and props 1`] = `
+<div>
+  <h1>
+    Memory
+  </h1>
+  <p>
+    score: 
+    0
+  </p>
+  <p>
+    Game in progress!
+  </p>
+</div>
+`;
+
+exports[`The GameHeader it renders when the game is over 1`] = `
+<div>
+  <h1>
+    Memory
+  </h1>
+  <p>
+    score: 
+    0
+  </p>
+  <p>
+    Game over!
+  </p>
+</div>
+`;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { GameHeader } from './components';
 
 interface IGameState {
   finished: boolean;
@@ -12,8 +13,11 @@ class Game extends React.Component<{}, IGameState> {
   }
 
   public render() {
+    const { score, finished } = this.state;
     return (
-      <p>Foo</p>
+      <div>
+        <GameHeader score={score} finished={finished} />
+      </div>
     );
   }
 }
