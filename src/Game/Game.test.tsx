@@ -16,4 +16,5 @@ describe('The Game Wrapper', () => {
     const game = shallow(<Game />);
     expect(game.find(GameHeader).length).toEqual(1);
   });
+
 });
