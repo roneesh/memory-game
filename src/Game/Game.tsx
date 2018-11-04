@@ -1,22 +1,32 @@
 import * as React from 'react';
-import { GameHeader } from './components';
+import { GameHeader, GameLevel } from './components';
+import './game.css';
+import { MemoryGameRecord } from './models';
 
-interface IGameState {
-  finished: boolean;
-  score: number;
+export interface IGameState {
+  game: MemoryGameRecord;
 }
 
 class Game extends React.Component<{}, IGameState> {
   public state = {
-    finished: false,
-    score: 0,
+    game: new MemoryGameRecord(), // really is a game record
+  };
+
+  public onLevelComplete() {
+    const currentLevel = this.state.game.level;
+    this.setState({
+      game: new MemoryGameRecord({ level: currentLevel + 1 }),
+    });
   }
 
+  public newGame = () => this.setState({ game: new MemoryGameRecord() });
+
   public render() {
-    const { score, finished } = this.state;
+    const { game } = this.state;
     return (
-      <div>
-        <GameHeader score={score} finished={finished} />
+      <div className="game" >
+        <GameHeader level={game.level} onNewGameClick={this.newGame}/>
+        <GameLevel updateLevel={this.onLevelComplete} />
       </div>
     );
   }

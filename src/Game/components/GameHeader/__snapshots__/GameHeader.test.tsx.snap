@@ -1,31 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The GameHeader it renders a title and props 1`] = `
-<div>
-  <h1>
+exports[`The GameHeader it renders 1`] = `
+<div
+  className="game-header"
+>
+  <h1
+    className="game-header__heading"
+  >
     Memory
   </h1>
-  <p>
-    score: 
-    0
-  </p>
-  <p>
-    Game in progress!
-  </p>
-</div>
-`;
-
-exports[`The GameHeader it renders when the game is over 1`] = `
-<div>
-  <h1>
-    Memory
-  </h1>
-  <p>
-    score: 
-    0
-  </p>
-  <p>
-    Game over!
-  </p>
+  <ul>
+    <li>
+      Level: 
+      99
+    </li>
+    <li>
+      <button
+        onClick={[Function]}
+      >
+        New Game
+      </button>
+    </li>
+  </ul>
 </div>
 `;

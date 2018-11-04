@@ -1,18 +1,24 @@
 import * as React from 'react';
+import './gameHeader.css';
 
 interface IGameHeaderProps {
-  finished: boolean;
-  score: number;
+  level: number;
+  onNewGameClick: () => void;
 }
 
 class Game extends React.Component<IGameHeaderProps, {}> {
   public render() {
-    const { score, finished } = this.props;
     return (
-      <div>
-        <h1>Memory</h1>
-        <p>score: {score}</p>
-        <p>{finished ? 'Game over!' : 'Game in progress!'}</p>
+      <div className="game-header">
+        <h1 className="game-header__heading">Memory</h1>
+        <ul>
+          <li>Level: {this.props.level}</li>
+          <li>
+            <button onClick={this.props.onNewGameClick}>
+              New Game
+            </button>
+          </li>
+        </ul>
       </div>
     );
   }

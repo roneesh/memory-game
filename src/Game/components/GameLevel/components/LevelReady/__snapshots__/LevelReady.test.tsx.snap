@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The level when its ready it renders 1`] = `
+<div
+  className="game-board"
+>
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+  <div
+    className="game-board__tile"
+  />
+</div>
+`;
