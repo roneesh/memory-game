@@ -5,89 +5,281 @@ exports[`The GameLevel it renders 1`] = `
   className="game-level"
 >
   <div
-    className="game-board"
-  >
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-    <div
-      className="game-board__tile"
-    />
-  </div>
-  <div
     className="game-level__controls"
   >
     <button
       onClick={[Function]}
     >
-      Play
+      Play Level
     </button>
+  </div>
+  <div
+    className="game-board"
+  >
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
+    <div
+      className="game-board__tile game-board__tile--static"
+    >
+      <div
+        className="game-board__tile__card__face game-board__tile__card"
+      >
+        <div
+          className="game-board__tile__card__face game-board__tile__card__face--front"
+        />
+      </div>
+    </div>
   </div>
 </div>
 `;

@@ -23,10 +23,10 @@ describe('The Game Wrapper', () => {
 
   it('can increment its game\'s level', () => {
     const game = shallow(<Game />);
-    expect((game.instance().state as IGameState).game.level).toEqual(0);
+    expect((game.instance().state as IGameState).game.level).toEqual(1);
 
     (game.instance() as Game).onLevelComplete();
-    expect((game.instance().state as IGameState).game.level).toEqual(1);
+    expect((game.instance().state as IGameState).game.level).toEqual(2);
   });
 
 });

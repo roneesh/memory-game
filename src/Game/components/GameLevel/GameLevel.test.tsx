@@ -2,6 +2,7 @@ import { shallow } from 'enzyme';
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import GameLevel from './GameLevel';
+import { LevelPreview, LevelReady, } from './states';
 
 describe('The GameLevel', () => {
 
@@ -22,13 +23,21 @@ describe('The GameLevel', () => {
   });
 
   describe('rendering different level states', () => {
-    // it('renders a preview state', () => {
-    //   const component = shallow(<GameLevel updateLevel={jest.fn()} />);
-    //   component.setState({ state: 'preview'});
-    //   expect(component.find(<LevelPreview />).length).toEqual(1);
-    // });
+    it('renders a preview state', () => {
+      const component = shallow(<GameLevel updateLevel={jest.fn()} />);
+      component.find('button').simulate('click');
+      expect(component.find(LevelPreview).length).toEqual(1);
+    });
 
-    // it('renders a preview state', () => {
+    it('can reset to a ready state', () => {
+      const component = shallow(<GameLevel updateLevel={jest.fn()} />);
+      component.find('button').simulate('click');
+      expect(component.find(LevelPreview).length).toEqual(1);
+      component.find('button').simulate('click');
+      expect(component.find(LevelReady).length).toEqual(1);
+    });
+
+    // it('renders a playing state', () => {
     //   const component = shallow(<GameLevel updateLevel={jest.fn()} />);
     //   component.setState({ state: 'playing'});
     //   expect(component.find(<LevelPlaying />).length).toEqual(1);

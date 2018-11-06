@@ -9,8 +9,40 @@
 
 .game-board__tile {
   width: 100px;
-  margin: 3px;
   height: 100px;
+  margin: 3px;
+  perspective: 300px;
+}
+
+.game-board__tile--static {
+  perspective: 0;
+}
+
+.game-board__tile__card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
   color: #ffffff;
+  font-size: 32px;
+  font-family: 'Monoton', cursive;
+}
+
+.game-board__tile__card__face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-board__tile__card__face--front {
   background-color: #bfc0c0;
+}
+
+.game-board__tile__card__face--back {
+  background-color: transparent;
 }

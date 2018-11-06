@@ -3,7 +3,7 @@ class MemoryGameRecord {
   public level: number;
 
   constructor(game?: { level: number }) {
-    this.level = game ? game.level : 0;
+    this.level = game ? game.level : 1;
   }
 
   public incrementLevel() {

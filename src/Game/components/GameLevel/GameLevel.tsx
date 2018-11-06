@@ -1,7 +1,7 @@
 import { shuffle } from 'lodash';
 import * as React from 'react';
-import { LevelReady  } from './components';
 import './gameLevel.css';
+import { LevelPreview, LevelReady, } from './states';
 
 interface IGameLevelProps {
   updateLevel: () => void;
@@ -74,8 +74,8 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
     switch(levelState) {
       case 'ready':
         return <LevelReady board={board} />;
-      // case 'preview':
-      //   return <LevelPreview />;
+      case 'preview':
+        return <LevelPreview board={board} />;
       // case 'playing':
       //   return <LevelPlaying />;
       // case 'finished':

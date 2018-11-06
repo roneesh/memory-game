@@ -5,7 +5,7 @@ describe('The MemoryGameRecord model', () => {
     it('initializes with a default game state', () => {
       const model = new MemoryGameRecord();
       expect(model).toEqual({
-        level: 0,
+        level: 1,
       });
     });
 
@@ -21,7 +21,7 @@ describe('The MemoryGameRecord model', () => {
     it('can increment its level', () => {
       const model = new MemoryGameRecord();
       model.incrementLevel();
-      expect(model.level).toEqual(1);
+      expect(model.level).toEqual(2);
     });
   });
 });
