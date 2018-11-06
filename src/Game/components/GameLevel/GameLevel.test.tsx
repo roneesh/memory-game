@@ -29,12 +29,15 @@ describe('The GameLevel', () => {
       expect(component.find(LevelPreview).length).toEqual(1);
     });
 
-    it('can reset to a ready state', () => {
+    it('can reset to a ready state and generate a new board', () => {
       const component = shallow(<GameLevel updateLevel={jest.fn()} />);
+      const firstBoard = (component.instance() as GameLevel).state.board;
       component.find('button').simulate('click');
-      expect(component.find(LevelPreview).length).toEqual(1);
       component.find('button').simulate('click');
+
+      const secondBoard = (component.instance() as GameLevel).state.board;
       expect(component.find(LevelReady).length).toEqual(1);
+      expect(firstBoard).not.toEqual(secondBoard);
     });
 
     // it('renders a playing state', () => {

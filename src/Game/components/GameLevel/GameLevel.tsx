@@ -48,8 +48,18 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
     );
   }
 
-  public setLevelState = (levelState: LevelState) => {
-    this.setState({ levelState });
+  public setLevelState = (newLevelState: LevelState) => {
+    if (newLevelState === 'ready') {
+      this.setState({
+        board: this.generateBoard(),
+        levelState: newLevelState,
+        turns: {
+          count: 0,
+          currentTurn: [],
+        },
+      });
+    }
+    this.setState({ levelState: newLevelState });
   }
 
   public getResetBtn() {

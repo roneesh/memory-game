@@ -10,11 +10,7 @@ const LevelReady = (props: ILevelReadyProps) => {
 
   return <div className="game-board">
     {board.map((item, index) => {
-      return <div className="game-board__tile game-board__tile--static" key={index}>
-        <div className="game-board__tile__card__face game-board__tile__card">
-          <div className="game-board__tile__card__face game-board__tile__card__face--front" />
-        </div>
-      </div>;
+      return <div className="game-board__tile" key={index} />
     })}
   </div>
 };
