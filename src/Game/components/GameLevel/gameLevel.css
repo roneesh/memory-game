@@ -24,3 +24,17 @@
   font-size: 32px;
   font-family: 'Monoton', cursive;
 }
+
+@keyframes tileWiggle {
+  0%   { transform:  rotateZ(0deg) }
+  25%  { transform:  rotateZ(5deg) }
+  50%  { transform:  rotateZ(-5deg) }
+  100% { transform:  rotateZ(0deg) }
+}
+
+
+.game-board__tile--wiggling {
+  position: relative;
+  animation-name: tileWiggle;
+  animation-duration: 3s;
+}

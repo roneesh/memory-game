@@ -5,76 +5,76 @@ exports[`The level when its previewing it renders 1`] = `
   className="game-board"
 >
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
   <div
-    className="game-board__tile"
+    className="game-board__tile "
   />
 </div>
 `;

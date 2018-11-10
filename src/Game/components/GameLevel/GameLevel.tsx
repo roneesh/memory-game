@@ -73,7 +73,6 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
   }
 
   public renderControls() {
-
     return <div className="game-level__controls">
       {this.getResetBtn()}
     </div>
@@ -85,7 +84,7 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
       case 'ready':
         return <LevelReady board={board} />;
       case 'preview':
-        return <LevelPreview board={board} />;
+        return <LevelPreview board={board} setLevelState={this.setLevelState} />;
       // case 'playing':
       //   return <LevelPlaying />;
       // case 'finished':

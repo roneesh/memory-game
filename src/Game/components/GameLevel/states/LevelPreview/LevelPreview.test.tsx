@@ -6,14 +6,16 @@ import LevelPreview from './LevelPreview';
 
 describe('The level when its previewing', () => {
   let board: IBoardTile[] = [];
+  let setLevelStateSpy: any;
   const boardBase =
     ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F',
     'G', 'G', 'H', 'H', 'I', 'I', 'J', 'J', 'K', 'K', 'L', 'L'];
 
-  const getComponent = (props?: any) => shallow((<LevelPreview board={board} {...props} />));
-  const getSnapshot = (props?: any) => <LevelPreview board={board} {...props} />;
+  const getComponent = () => shallow((<LevelPreview board={board} setLevelState={setLevelStateSpy} />));
+  const getSnapshot = () => <LevelPreview board={board} setLevelState={jest.fn()} />;
 
   beforeEach(() => {
+    setLevelStateSpy = jest.fn();
     board = boardBase.map(character => {
       return {
         character,
@@ -29,14 +31,25 @@ describe('The level when its previewing', () => {
     expect(levelPreview).toMatchSnapshot();
   });
 
-  it('previews its tiles every 200 seconds', () => {
+  it('increments its previewedTileIndex until its time elapsed is 4800', () => {
     const component = getComponent();
     const instance = component.instance() as LevelPreview;
-    const timerSpy = spyOn(instance.state, 'previewer');
-    jest.advanceTimersByTime(200);
-    jest.advanceTimersByTime(200);
-
-    expect(timerSpy).toHaveBeenCalledTimes(1);
-    expect(component.text()).toEqual('A');
+    jest.runTimersToTime(4800);
+    expect(instance.state.previewedTileIndex).toEqual(24);
   });
+
+  it('is wiggling from 4800ms to 7800ms', () => {
+    const component = getComponent();
+    const instance = component.instance() as LevelPreview;
+    jest.runTimersToTime(7800);
+    expect(instance.state.wiggling).toEqual(true);
+    expect(component.find('.game-board__tile.game-board__tile--wiggling').length).toEqual(24);
+  });
+
+  it('dispatches the next state update after 7800ms', () => {
+    getComponent();
+    jest.runTimersToTime(8000);
+    expect(setLevelStateSpy).toHaveBeenCalledWith('playing');
+  });
+
 });

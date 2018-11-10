@@ -3,21 +3,48 @@ import { IBoardTile } from '../../GameLevel';
 
 interface ILevelPreviewProps {
   board: IBoardTile[];
+  setLevelState: (newLevelState: string) => void;
 };
 
 interface ILevelPreviewState {
-  previewer: NodeJS.Timer;
+  previewTimer: NodeJS.Timer;
+  timeElapsed: number;
   previewedTileIndex: number;
+  wiggling: boolean;
 };
 
 class LevelPreview extends React.Component<ILevelPreviewProps, ILevelPreviewState> {
+  public timeIncrement = 200;
+
   constructor(props: ILevelPreviewProps) {
     super(props);
 
     this.state = {
+      previewTimer: setInterval(this.previewManager, this.timeIncrement),
       previewedTileIndex: 0,
-      previewer: setInterval(this.incrementPreviewedTile, 200),
+      timeElapsed: 0,
+      wiggling: false,
     };
+  }
+
+  public previewManager = () => {
+    const { setLevelState } = this.props;
+    const { timeElapsed } = this.state;
+    if (timeElapsed < 4800) {
+      this.setState({
+        previewedTileIndex: this.state.previewedTileIndex + 1,
+        timeElapsed: timeElapsed + this.timeIncrement,
+      });
+      return;
+    }
+    if (timeElapsed < 7800) {
+      this.setState({
+        timeElapsed: timeElapsed + this.timeIncrement,
+        wiggling: true,
+      });
+      return;
+    }
+    setLevelState('playing');
   }
 
   public incrementPreviewedTile = () => {
@@ -28,11 +55,14 @@ class LevelPreview extends React.Component<ILevelPreviewProps, ILevelPreviewStat
 
   public render() {
     const { board } = this.props;
-    const { previewedTileIndex } = this.state;
+    const { previewedTileIndex, wiggling } = this.state;
+    const tileClass = `game-board__tile ${wiggling ? 'game-board__tile--wiggling' : ''}`;
+
     return <div className="game-board">
       {board.map((item, index) => {
-        return <div className="game-board__tile" key={index}>
-          { index < previewedTileIndex ? item.character : null }
+        const character = index < previewedTileIndex ? item.character : null;
+        return <div className={tileClass} key={index}>
+          {character}
       </div>;
       })}
     </div>
