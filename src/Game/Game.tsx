@@ -9,11 +9,12 @@ export interface IGameState {
 
 class Game extends React.Component<{}, IGameState> {
   public state = {
-    game: new MemoryGameRecord(), // really is a game record
+    game: new MemoryGameRecord(),
   };
 
-  public onLevelComplete() {
-    const currentLevel = this.state.game.level;
+  public onLevelComplete = () => {
+    const { game } = this.state;
+    const currentLevel = game.level;
     this.setState({
       game: new MemoryGameRecord({ level: currentLevel + 1 }),
     });
@@ -26,7 +27,7 @@ class Game extends React.Component<{}, IGameState> {
     return (
       <div className="game" >
         <GameHeader level={game.level} onNewGameClick={this.newGame}/>
-        <GameLevel updateLevel={this.onLevelComplete} />
+        <GameLevel level={game.level} updateLevel={this.onLevelComplete} />
       </div>
     );
   }

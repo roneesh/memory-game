@@ -1,16 +1,16 @@
 import { shuffle } from 'lodash';
 import * as React from 'react';
 import './gameLevel.css';
-import { LevelPreview, LevelReady, } from './states';
+import { LevelFinished, LevelPlaying, LevelPreview, LevelReady, } from './states';
 
 interface IGameLevelProps {
   updateLevel: () => void;
+  level: number;
 };
 
 type LevelState = "ready" | "preview" | "playing" | "finished";
 export interface IBoardTile {
   character: string | HTMLElement;
-  visible: boolean;
 };
 export interface ILevelTurns {
   count: number;
@@ -42,7 +42,6 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
       'G', 'G', 'H', 'H', 'I', 'I', 'J', 'J', 'K', 'K', 'L', 'L'].map(character => {
         return {
           character,
-          visible: false,
         };
       })
     );
@@ -65,6 +64,10 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
   public getResetBtn() {
     const { levelState } = this.state;
 
+    if (levelState === 'finished') {
+      return null;
+    }
+
     const text = levelState === 'ready' ? 'Play Level' : 'Reset';
     const nextState = levelState === 'ready' ? 'preview' : 'ready';
     return <button onClick={this.setLevelState.bind(null, nextState)}>
@@ -80,20 +83,27 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
 
   public renderState() {
     const { levelState, board } = this.state;
+    const { updateLevel } = this.props;
+
     switch(levelState) {
       case 'ready':
         return <LevelReady board={board} />;
       case 'preview':
         return <LevelPreview board={board} setLevelState={this.setLevelState} />;
-      // case 'playing':
-      //   return <LevelPlaying />;
-      // case 'finished':
-      //   return <LevelFinished />;
+      case 'playing':
+        return <LevelPlaying board={board} setLevelState={this.setLevelState} />;
+      case 'finished':
+        return <LevelFinished board={board} updateLevel={updateLevel} />;
       default:
         return null;
     }
   }
 
+  public componentDidUpdate(prevProps: IGameLevelProps) {
+    if (this.props.level !== prevProps.level) {
+      this.setLevelState('ready');
+    }
+  }
   public render() {
     return <div className="game-level">
       {this.renderControls()}

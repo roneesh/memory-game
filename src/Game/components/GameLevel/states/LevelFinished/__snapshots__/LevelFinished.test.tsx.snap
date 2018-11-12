@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The level when its previewing it renders as wiggling tiles 1`] = `
+<div
+  className="game-board"
+>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    A
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    A
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    B
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    B
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    C
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    C
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    D
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    D
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    E
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    E
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    F
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    F
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    G
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    G
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    H
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    H
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    I
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    I
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    J
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    J
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    K
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    K
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    L
+  </div>
+  <div
+    className="game-board__tile game-board__tile--wiggling"
+  >
+    L
+  </div>
+</div>
+`;

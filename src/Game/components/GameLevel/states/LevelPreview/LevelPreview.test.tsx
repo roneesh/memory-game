@@ -19,7 +19,6 @@ describe('The level when its previewing', () => {
     board = boardBase.map(character => {
       return {
         character,
-        visible: false,
       };
     });
   });

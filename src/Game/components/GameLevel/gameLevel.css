@@ -32,9 +32,34 @@
   100% { transform:  rotateZ(0deg) }
 }
 
-
 .game-board__tile--wiggling {
   position: relative;
   animation-name: tileWiggle;
+  animation-duration: 3s;
+}
+
+@keyframes tileExplodeUp {
+  0%   { top: 0px }
+  15%  { top: 100px }
+  40%  { top: 1000px }
+  100% { top: 10000px }
+}
+
+@keyframes tileExplodeDown {
+  0%   { top: 0px }
+  15%  { top: -100px }
+  40%  { top: -1000px }
+  100% { top: -10000px }
+}
+
+.game-board__tile--exploding-up {
+  position: relative;
+  animation-name: tileExplodeUp;
+  animation-duration: 3s;
+}
+
+.game-board__tile--exploding-down {
+  position: relative;
+  animation-name: tileExplodeDown;
   animation-duration: 3s;
 }

@@ -13,7 +13,6 @@ describe('The level when its ready', () => {
     board = boardBase.map(character => {
       return {
         character,
-        visible: false,
       };
     });
   });

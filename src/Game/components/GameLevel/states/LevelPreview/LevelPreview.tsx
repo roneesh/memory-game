@@ -27,6 +27,10 @@ class LevelPreview extends React.Component<ILevelPreviewProps, ILevelPreviewStat
     };
   }
 
+  public componentWillUnmount() {
+    clearInterval(this.state.previewTimer);
+  }
+
   public previewManager = () => {
     const { setLevelState } = this.props;
     const { timeElapsed } = this.state;
