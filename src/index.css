@@ -16,7 +16,19 @@ body {
   padding: 10px;
 }
 
+body p, body button {
+  font-family: 'Raleway', sans-serif;
+}
+
+body p {
+  color: #F0F2EF;
+}
+
 .conatiner {
   height: 100vh;
   width: 640px;
+}
+
+.txt-white {
+  color: #ffffff
 }

@@ -65,14 +65,18 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
     const { levelState } = this.state;
 
     if (levelState === 'finished') {
-      return null;
+      return;
     }
 
-    const text = levelState === 'ready' ? 'Play Level' : 'Reset';
-    const nextState = levelState === 'ready' ? 'preview' : 'ready';
-    return <button onClick={this.setLevelState.bind(null, nextState)}>
-      {text}
-    </button>;
+    if (levelState === 'ready') {
+      return <button onClick={this.setLevelState.bind(null, 'preview')}>
+        Play
+      </button>;
+    }
+
+    return <button onClick={this.setLevelState.bind(null, 'ready')}>
+      Reset
+    </button>
   }
 
   public renderControls() {

@@ -25,5 +25,18 @@
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.8",
     "typescript": "^3.1.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!**/node_modules/**",
+      "!**/build/**",
+      "!**/e2e/**",
+      "!**/public/**",
+      "!**/src/**/*.tsx.snap",
+      "!**/src/**/*.d.ts",
+      "!**/src/index.tsx",
+      "!**/src/**/index.tsx",
+      "**/src/**"
+    ]
   }
 }

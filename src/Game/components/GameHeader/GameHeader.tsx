@@ -11,14 +11,14 @@ class Game extends React.Component<IGameHeaderProps, {}> {
     return (
       <div className="game-header">
         <h1 className="game-header__heading">Memory</h1>
-        <ul>
-          <li>Level: {this.props.level}</li>
-          <li>
+        <div className="game-header__information">
+          <div>
             <button onClick={this.props.onNewGameClick}>
-              New Game
+              Reset Game
             </button>
-          </li>
-        </ul>
+          </div>
+          <p>Level: {this.props.level}</p>
+        </div>
       </div>
     );
   }

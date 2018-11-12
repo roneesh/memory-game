@@ -9,18 +9,20 @@ exports[`The GameHeader it renders 1`] = `
   >
     Memory
   </h1>
-  <ul>
-    <li>
-      Level: 
-      99
-    </li>
-    <li>
+  <div
+    className="game-header__information"
+  >
+    <div>
       <button
         onClick={[Function]}
       >
-        New Game
+        Reset Game
       </button>
-    </li>
-  </ul>
+    </div>
+    <p>
+      Level: 
+      99
+    </p>
+  </div>
 </div>
 `;

@@ -51,4 +51,11 @@ describe('The level when its previewing', () => {
     expect(setLevelStateSpy).toHaveBeenCalledWith('playing');
   });
 
+  it('clears its interval on unmount', () => {
+    const component = getComponent();
+    const clearIntervalSpy = jest.spyOn(global, 'clearInterval');
+    const interval = (component.instance() as LevelPreview).state.previewTimer;
+    component.unmount();
+    expect(clearIntervalSpy).toHaveBeenCalledWith(interval);
+  });
 });

@@ -2,6 +2,10 @@
   margin-bottom: 20px;
 }
 
+.game-level__controls {
+  height: 24px;
+}
+
 .game-board {
   background-color: #4f5d75;
   display: flex;

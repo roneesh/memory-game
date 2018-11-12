@@ -10,7 +10,7 @@ exports[`The GameLevel it renders 1`] = `
     <button
       onClick={[Function]}
     >
-      Play Level
+      Play
     </button>
   </div>
   <div

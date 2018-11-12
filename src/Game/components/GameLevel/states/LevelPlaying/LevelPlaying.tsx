@@ -47,9 +47,9 @@ class LevelPlaying extends React.Component<ILevelPlayingProps, ILevelPlayingStat
     const dontProcessClick = maxTilesSelected || tileIsAlreadyClicked;
     if (dontProcessClick) {
       /* tslint:disable */
-      console.log('maxTilesSelected: ', maxTilesSelected);
-      console.log('tileIsAlreadyClicked: ', tileIsAlreadyClicked);
-      console.log('dontProcessClick: ', dontProcessClick);
+      // console.log('maxTilesSelected: ', maxTilesSelected);
+      // console.log('tileIsAlreadyClicked: ', tileIsAlreadyClicked);
+      // console.log('dontProcessClick: ', dontProcessClick);
       return;
     }
 

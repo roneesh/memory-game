@@ -34,7 +34,6 @@ class LevelFinished extends React.Component<ILevelFinishedProps, ILevelFinishedS
     const { timeElapsed } = this.state;
     if (timeElapsed < 3000) {
       this.setState({
-        action: 'wiggling',
         timeElapsed: timeElapsed + this.timeIncrement,
       });
       return;
