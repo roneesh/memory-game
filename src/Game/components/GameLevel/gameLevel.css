@@ -3,7 +3,8 @@
 }
 
 .game-level__controls {
-  height: 24px;
+  height: 25px;
+  margin-bottom: 5px;
 }
 
 .game-board {
