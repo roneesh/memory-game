@@ -75,7 +75,7 @@ class GameLevel extends React.Component<IGameLevelProps, IGameLevelState> {
     }
 
     return <button onClick={this.setLevelState.bind(null, 'ready')}>
-      Reset
+      Reset Round
     </button>
   }
 

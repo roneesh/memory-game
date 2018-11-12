@@ -3,7 +3,7 @@ import Game from './Game';
 
 class App extends React.Component {
   public render() {
-    return <div className="conatiner">
+    return <div className="container">
       <Game />
     </div>;
   }
