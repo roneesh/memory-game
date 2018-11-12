@@ -25,8 +25,8 @@ class Game extends React.Component<{}, IGameState> {
   public render() {
     const { game } = this.state;
     return (
-      <div className="game" >
-        <GameHeader level={game.level} onNewGameClick={this.newGame}/>
+      <div className="game">
+        <GameHeader level={game.level} onNewGameClick={this.newGame} />
         <GameLevel level={game.level} updateLevel={this.onLevelComplete} />
       </div>
     );

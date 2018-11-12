@@ -1,4 +1,5 @@
 import { shallow } from 'enzyme';
+import { cloneDeep } from 'lodash';
 import * as React from 'react';
 import renderer from 'react-test-renderer';
 import { IBoardTile } from '../../GameLevel';
@@ -15,6 +16,7 @@ describe('The level when its playing', () => {
   const getSnapshot = () => <LevelPlaying board={board} setLevelState={jest.fn()} />;
 
   beforeEach(() => {
+    jest.useFakeTimers();
     setLevelStateSpy = jest.fn();
     board = boardBase.map(character => {
       return {
@@ -36,6 +38,7 @@ describe('The level when its playing', () => {
     component.find('.game-board__tile').first().simulate('click');
 
     expect(instance.state.turns.count).toEqual(1);
+    expect(instance.state.boardCopy[0].status).toEqual('selected');
   });
 
   it('doesnt count an already clicked tile as a second turn or new tile', () => {
@@ -48,7 +51,66 @@ describe('The level when its playing', () => {
     expect(instance.state.turns.count).toEqual(1);
   });
 
-  // it('dispatches the next statit(e update when its foundPairs lenght is 12', () => {
+  it('wont click a third tile while waiting', () => {
+    const component = getComponent();
+    const instance = component.instance() as LevelPlaying;
+    component.find('.game-board__tile').at(0).simulate('click');
+    component.find('.game-board__tile').at(1).simulate('click');
+    component.find('.game-board__tile').at(2).simulate('click');
 
-  // });
+    expect(instance.state.turns.count).toEqual(2);
+  });
+
+  it('wont process a click on a found pair', () => {
+    const component = getComponent();
+    const instance = component.instance() as LevelPlaying;
+    component.find('.game-board__tile').at(0).simulate('click');
+    component.find('.game-board__tile').at(1).simulate('click');
+    component.find('.game-board__tile').at(0).simulate('click');
+
+    expect(instance.state.turns.count).toEqual(2);
+  });
+
+  it('will process a pair properly until the turn resolves', () => {
+    const component = getComponent();
+    component.find('.game-board__tile').at(0).simulate('click');
+    component.find('.game-board__tile').at(1).simulate('click');
+    const instance = component.instance() as LevelPlaying;
+
+    expect(instance.state.turns.count).toEqual(2);
+    expect(instance.state.turns.selections.length).toEqual(2);
+    expect(instance.state.boardCopy[0].status).toEqual('selected');
+    expect(instance.state.boardCopy[1].status).toEqual('selected');
+  });
+
+  it('resolves a turn properly', async () => {
+    const component = getComponent();
+    component.find('.game-board__tile').at(0).simulate('click');
+    component.find('.game-board__tile').at(1).simulate('click');
+    await (component.instance() as LevelPlaying).resolveTurn();
+    const instance = (component.instance() as LevelPlaying);
+
+    expect(instance.state.turns.count).toEqual(2);
+    expect(instance.state.turns.selections.length).toEqual(0);
+    expect(instance.state.boardCopy[0].status).toEqual('found');
+    expect(instance.state.boardCopy[1].status).toEqual('found');
+  });
+
+  it('calls setLevelState when every tile has been found', async () => {
+    const component = getComponent();
+    const boardCopy = cloneDeep((component.instance() as LevelPlaying).state.boardCopy);
+    const completedBoard = boardCopy.map(tile => {
+      return {
+        character: tile.character,
+        status: 'found',
+      };
+    });
+    component.setState({
+      boardCopy: completedBoard,
+    });
+
+    await (component.instance() as LevelPlaying).resolveTurn().then(() => {
+      expect(setLevelStateSpy).toHaveBeenCalledWith('finished');
+    });
+  });
 });

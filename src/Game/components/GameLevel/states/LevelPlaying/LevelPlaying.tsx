@@ -46,10 +46,6 @@ class LevelPlaying extends React.Component<ILevelPlayingProps, ILevelPlayingStat
     const tileIsAlreadyClicked = tile.status === 'selected' || tile.status === 'found';
     const dontProcessClick = maxTilesSelected || tileIsAlreadyClicked;
     if (dontProcessClick) {
-      /* tslint:disable */
-      // console.log('maxTilesSelected: ', maxTilesSelected);
-      // console.log('tileIsAlreadyClicked: ', tileIsAlreadyClicked);
-      // console.log('dontProcessClick: ', dontProcessClick);
       return;
     }
 
@@ -68,12 +64,12 @@ class LevelPlaying extends React.Component<ILevelPlayingProps, ILevelPlayingStat
   }
 
   public resolveTurn = async () => {
-    // 200ms delay to hide tile
-    await new Promise(resolve => setTimeout(resolve, 200));
+    // 200ms delay before we hide tiles again
+    await new Promise(resolve => setTimeout(() => {resolve()}, 200));
 
     const { boardCopy, turns } = this.state;
-    const selections = turns.selections;
 
+    const selections = turns.selections;
     const tileCharactersMatch =
       boardCopy[selections[0]].character === boardCopy[selections[1]].character;
     if (tileCharactersMatch) {
@@ -83,9 +79,8 @@ class LevelPlaying extends React.Component<ILevelPlayingProps, ILevelPlayingStat
       boardCopy[selections[0]].status = 'unfound';
       boardCopy[selections[1]].status = 'unfound';
     }
-
-    const allFounds = boardCopy.filter(tile => tile.status === 'found');
-    if (allFounds.length === 24) {
+    const allFoundTiles = boardCopy.filter(tile => tile.status === 'found');
+    if (allFoundTiles.length === 24) {
       this.props.setLevelState('finished');
     } else {
       this.setState({
