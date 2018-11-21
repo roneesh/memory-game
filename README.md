@@ -29,7 +29,7 @@ Game
   - GameHeader: renders the heading and gloabl information about the game.
   - GameLevel: renders various level states.
     - LevelReady: renders hidden tiles.
-    - LevelPreview: animates tiles showing them briefly.
+    - LevelPreview: animates tiles, showing them briefly.
     - LevelPlaying: plays the level itself.
     - LevelFinished: animates tiles moving out of screen and loops back to LevelReady.
 
@@ -49,7 +49,13 @@ The ```<Game />``` component uses a ```MemoryGameRecord``` as a simple front-end
 
 The states that ```<GameLevel />``` render are the heart of the application. A game of memory consists of various states that transition back and forth to each other.
 
-The initial level is ```<LevelReady />``` which is a blank board waiting to start being played. Once the user starts to play, it transitions to a ```<LevelPreivew />``` where they get to see the tiles. This state has custom animations showing the tiles. Once the preview is done, we transition to ```<LevelPlaying />``` which clones the board and plays the game. There is are two quirks in LevelPlaying. Normally when I update state I re-copy all my data (something I learned from my Immutable.js days :-), however in this component, the boardCopy item on state updates its values in place, and I don't re-copy the state. When writing the code to duplicate state, it seemed unncessarily verbose, with no real gain given the context of a small application. But generally as a rule I would avoid in-place mutations on state data. The second quirk is that two tests in LevelPlaying aren't passing. I believe it has to do with an issue around Jests timers. Finally, once the level is complete we transition to ```<LevelFinished />```, which animates the tiles off the screen and then increments the level and transitions us back to LevelReady.
+The initial level is ```<LevelReady />``` which is a blank board waiting to start being played. Once the user starts to play, it transitions to a ```<LevelPreivew />``` where they get to see the tiles. This state has custom animations showing the tiles. Once the preview is done, we transition to ```<LevelPlaying />``` which clones the board and plays the game.
+
+There are two quirks in LevelPlaying. Normally when I update state I copy all my data (something I learned from my Immutable.js days :-), however in this component, the boardCopy has its values updated in place, and I don't re-copy the state. When writing the code to duplicate state, it seemed unncessarily verbose with no real gain given the context of a small application. But generally as a rule I would avoid in-place mutations on state data.
+
+The second quirk is that two tests in LevelPlaying aren't passing. I believe it has to do with an issue around Jests timers.
+
+Finally, once the level is complete we transition to ```<LevelFinished />```, which animates the tiles off the screen and then increments the level and transitions us back to LevelReady.
 
 
 
