@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App(CRA)](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with [Create React App(CRA) TypeScript](https://github.com/wmonk/create-react-app-typescript).
 
 ## Table of Contents
 
